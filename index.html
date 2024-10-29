@@ -4,349 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Fadira</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #74ebd5, #acb6e5); 
-            color: #333;
-        }
-        header, nav, main, footer {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-            border-radius: 10px; 
-        }
-        h1, h2, h3 {
-            color: #005f99;
-            font-family: 'Helvetica', sans-serif;
-        }
-        img {
-            border-radius: 20px; 
-            transition: transform 0.3s ease; 
-        }
-        img:hover {
-            transform: scale(1.05); 
-        }
-        video {
-            width: 500px;
-            border: 5px solid #005f99; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 95, 153, 0.3);
-            margin-bottom: 20px;
-        }
-        audio {
-            width: 400px;
-            border: 5px solid #ff5722; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(255, 87, 34, 0.3); 
-            margin-bottom: 50px; 
-        }
-        section audio {
-            margin-top: 30px; 
-        }
-        section {
-            text-align: center; 
-        }    
-        form {
-            margin-top: 20px;
-        }
-        nav {
-            display: flex; 
-            align-items: center;
-            justify-content: flex-start; 
-        }       
-        nav img {
-            margin-right: 20px; 
-        }       
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-            justify-content: center;
-            flex-grow: 1; 
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #005f99;
-        }
-        nav ul li a:hover {
-            color: #ff5722; 
-        }
-        .box-model {
-            border: 2px solid #333;
-            padding: 15px;
-            margin: 15px;
-            background-color: #f0f8ff;
-            transition: background-color 0.3s ease;
-        }
-        .box-model:hover {
-            background-color: #e0f7fa;
-        }
-        .pseudo-class:hover {
-            background-color: #ffccbc;
-        }
-        .pseudo-element::first-letter {
-            font-size: 200%;
-            color: #ff5722;
-        }
-        button {
-            background-color: #ff5722;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #e64a19;
-        }
-        .fade-in {
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        footer {
-            text-align: center;
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            padding: 20px;
-            background-color: #005f99;
-            color: white;
-            border-radius: 10px;
-            position: relative;
-        }
-        .footer-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-        .social-icons {
-            display: flex;             
-            align-items: center;         
-            padding: 10px 0;             
-            margin-left: 15px;         
-        }        
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .social-icons img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;  
-        }
-        footer a {
-            color: #ffeb3b;
-            text-decoration: none;
-        }
-        footer p {
-            margin:  0;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        .section-box {
-            background-color: #a5f9fc;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        #kontak-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;      
-            height: 100vh;             
-            text-align: center; 
-            margin-top: 50px;            
-            padding-top: 70px;          
-        }
-        form {
-            width: 100%;              
-            max-width: 1100px;          
-            padding: 20px;
-            background-color: #fff; 
-            text-align: center;   
-            border-radius: 10px;      
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-        }
-        audio {
-            margin-bottom: 50px; 
-        }
-        input[type="text"], input[type="email"] {
-            width: 100%; 
-            max-width: 600px; 
-            padding: 10px; 
-            font-size: 16px;
-            border: 2px solid #005f99; 
-            border-radius: 5px; 
-            margin-bottom: 20px; 
-        }        
-        textarea {
-            width: 100%; 
-            max-width: 600px; 
-            height: 150px; 
-            padding: 10px; 
-            font-size: 16px; 
-            border: 2px solid #005f99; 
-            border-radius: 5px; 
-            margin-bottom: 20px; 
-        }        
-       #pendidikan ul, #keahlian ul {
-            list-style-position: inside; 
-            text-align: justify; 
-            max-width: 600px; 
-            margin: 0 auto; 
-            padding: 0;
-        }       
-        #pendidikan ul li, #keahlian ul li {
-            margin-bottom: 10px; 
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header class="fade-in">
-        <h1 align="center">Portofolio Fadira</h1>
-        <h2 align="center">THT-2 Praktikum Pemrograman Web</h2>
+<body class="bg-gradient-to-r from-green-200 via-blue-300 to-purple-300 text-gray-900">
+    <header class="bg-blue-900 text-white p-4 shadow-lg">
+        <h1 class="text-3xl font-bold text-center">Portofolio Fadira</h1>
     </header>
-
-    <nav>
-        <img src="html.png" alt="Logo" width="50" height="50">
-        <ul>
-            <li><a href="#tentang">Tentang Saya</a></li>
-            <li><a href="#pendidikan">Pendidikan</a></li>
-            <li><a href="#keahlian">Keahlian</a></li>
-            <li><a href="#pengalaman">Pengalaman</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section align="center" class="box-model">
-            <img src="FADIRA.png" width="900" alt="Foto Fadira" style="display: block; margin: 0 auto;">
-            <p align="center"><em>"Selalu ada hal baik dalam hidup kita, aamiin."</em></p>
-        </section>
-
-        <div class="grid-container">
-            <section id="tentang" class="section-box">
-                <h3 align="center">Tentang Saya</h3>
-                <p align="justify" class="pseudo-element">
-                    Halo! Nama saya <strong>Fadira Mutiara Syafa'</strong>. Saya adalah mahasiswa Ilmu Komputer semester 5 di Universitas Pertamina yang aktif dalam organisasi Himpunan Mahasiswa Ilmu Komputer (HMIK) serta event UKM kampus. Saya juga telah mengikuti beberapa aktivitas di luar kampus seperti Magang di RRI Malang (SMK), seminar nasional maupun internasional, dan bootcamp yang sesuai program studi.
-                </p>
-            </section>
-
-            <section id="pendidikan" class="section-box">
-                <h3 align="center">Pendidikan</h3>
-                <ul>
-                    <li>Sekolah Menengah Atas: <strong>SMK TELEKOMUNIKASI DARUL 'ULUM (2019 - 2022)</strong></li>
-                    <li>Perguruan Tinggi: <strong>Universitas Pertamina (2022 - Sekarang)</strong></li>
-                    <li>Program Studi: <strong>Ilmu Komputer</strong></li>
-                </ul>
-            </section>
-
-            <section id="keahlian" class="section-box">
-                <h3 align="center">Keahlian</h3>
-                <ul>
-                    <li>Pemrograman Web: HTML, Java, C++</li>
-                    <li>Desain Grafis: <i>Adobe Photoshop, Corel Draw, FilmoraGo</i></li>
-                    <li>Mengoperasikan <i>Microsoft Office</i></li>
-                </ul>
-            </section>
-
-            <section id="pengalaman" class="section-box">
-                <h3 align="center">Pengalaman</h3>
-                <table border="1" align="center">
-                    <tr>
-                        <th><mark>Tahun</mark></th>
-                        <th><mark>Nama Pengalaman</mark></th>
-                    </tr>
-                    <tr>
-                        <td align="center">2021</td>
-                        <td align="center">Operator Live Youtube RRI Malang</td>
-                    </tr>
-                    <tr>
-                        <td align="center">2020 - 2022</td>
-                        <td align="center">Bendahara 2 OSIS SMK TELEKOMUNIKASI DARUL 'ULUM</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="5" style="text-align: center">2024</td>
-                    </tr>
-                    <tr>
-                        <td align="center">Sekretaris 1 AoT & CATCH UP</td>
-                    </tr>
-                    <tr>
-                        <td align="center">Anggota Public Relation SPACE UP 6.0</td>
-                    </tr>
-                    <tr>
-                        <td align="center">Kepala Divisi Konsumsi Mirai Islamic Festival 3.0</td>
-                    </tr>
-                    <tr>
-                        <td align="center">Anggota Divisi Konsumsi Computer and IT Event UP 7</td>
-                    </tr>
-                    <tr>
-                        <td align="center">2024 - Sekarang</td>
-                        <td align="center">Sekretaris 2 Himpunan Mahasiswa Ilmu Komputer</td>
-                    </tr>
-                </table>
-            </section>
+    <nav class="bg-white shadow-md sticky top-0 z-10 flex justify-center p-4">
+        <div class="flex space-x-4">
+            <a href="#tentang" class="text-blue-800 font-semibold hover:text-indigo-600 transition">Tentang Saya</a>
+            <a href="#pendidikan" class="text-blue-800 font-semibold hover:text-indigo-600 transition">Pendidikan</a>
+            <a href="#keahlian" class="text-blue-800 font-semibold hover:text-indigo-600 transition">Keahlian</a>
+            <a href="#pengalaman" class="text-blue-800 font-semibold hover:text-indigo-600 transition">Pengalaman</a>
+            <a href="#kontak" class="text-blue-800 font-semibold hover:text-indigo-600 transition">Kontak</a>
         </div>
-        
-        <section>
-            <h3 align="center">Rekomendasi Video</h3>
-            <video width="500" controls>
-                <source src="Highway 1009 Official Film.mp4" type="video/mp4">
-                Video tidak bisa diputar.
-            </video>
-        </section>
-
-        <section>
-            <h3 align="center">Rekomendasi Musik</h3>
-            <audio controls>
-                <source src="ENHYPEN - Highway 1009.mp3" type="audio/mpeg">
-                Audio tidak bisa diputar.
-            </audio>
-        </section>
-
-        <section id="kontak" class="section-box">
-            <h3 align="center">Kontak</h3>
-            <form action="submit_form.php" method="POST">
-                <label for="nama">Nama:</label><br>
-                <input type="text" id="nama" name="nama" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="pesan">Pesan:</label><br>
-                <textarea id="pesan" name="pesan" rows="4" required></textarea><br><br>
-                <button type="submit">Kirim</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Fadira Mutiara Syafa' &hearts;. </p>
+    </nav>
+    <div class="container mx-auto my-10 flex flex-col lg:flex-row gap-6">
+        <aside class="bg-white shadow-lg rounded-lg p-6 lg:w-1/4 flex flex-col items-center">
+            <img src="tiara.jpg" alt="Foto Fadira" class="w-full rounded-lg mb-4 hover:scale-105 transform transition duration-300">
+            <p class="italic text-center text-gray-600">"Selalu ada hal baik dalam hidup kita, aamiin."</p>
+        </aside>
+        <main class="grid gap-6 lg:grid-cols-2 w-full">
+            <section id="tentang" class="bg-white shadow-md rounded-lg p-6 border-l-4 border-blue-900">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Tentang Saya</h2>
+                <p>Halo! Nama saya <strong>Fadira Mutiara Syafa'</strong>. Saya adalah mahasiswa Ilmu Komputer semester 5 di Universitas Pertamina yang aktif dalam organisasi Himpunan Mahasiswa Ilmu Komputer (HMIK) serta event UKM kampus.</p>
+            </section>
+            <section id="pendidikan" class="bg-white shadow-md rounded-lg p-6 border-l-4 border-green-600">
+                <h2 class="text-2xl font-bold text-green-700 mb-4">Pendidikan</h2>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                    <li><strong>SMK TELEKOMUNIKASI DARUL 'ULUM (2019 - 2022)</strong></li>
+                    <li><strong>Universitas Pertamina (2022 - Sekarang)</strong> - Program Studi: Ilmu Komputer</li>
+                </ul>
+            </section>
+            <section id="keahlian" class="bg-white shadow-md rounded-lg p-6 col-span-2 border-l-4 border-purple-600">
+                <h2 class="text-2xl font-bold text-purple-800 mb-4">Keahlian</h2>
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-2">Pemrograman Web</h3>
+                        <p class="text-gray-600">HTML, Java, C++</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-2">Desain Grafis</h3>
+                        <p class="text-gray-600">Adobe Photoshop, Corel Draw, FilmoraGo</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-700 mb-2">Microsoft Office</h3>
+                        <p class="text-gray-600">Word, Excel, PowerPoint</p>
+                    </div>
+                </div>
+            </section>
+            <section id="pengalaman" class="bg-white shadow-md rounded-lg p-6 col-span-2 border-l-4 border-red-600">
+                <h2 class="text-2xl font-bold text-red-800 mb-4">Pengalaman</h2>
+                <ul class="space-y-4 text-gray-700">
+                    <li><strong>2021:</strong> Operator Live Youtube RRI Malang</li>
+                    <li><strong>2020 - 2022:</strong> Bendahara 2 OSIS SMK TELEKOMUNIKASI DARUL 'ULUM</li>
+                    <li><strong>2024:</strong> Sekretaris 1 AoT & CATCH UP</li>
+                    <li><strong>2024 - Sekarang:</strong> Sekretaris 2 Himpunan Mahasiswa Ilmu Komputer</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <footer class="bg-blue-900 text-white p-6 text-center">
+        <p>&copy; 2024 Fadira Mutiara Syafa'.</p>
         <p>All rights reserved.</p>
-        <div class="footer-container">
-            <div class="social-icons">
-                <a href="https://workspace.google.com/intl/id/gmail/"><img src="logo gmail.png" alt="Gmail"></a>
-                <a href="https://www.instagram.com/fdrmtr04/profilecard/?igsh=MTR6MW01ZWJlMDZ5cw=="><img src="logo ig.jpg" alt="Instagram"></a>
-            </div>
+        <div class="flex justify-center space-x-4 mt-2">
+            <a href="https://workspace.google.com/intl/id/gmail/" class="hover:opacity-75 transition duration-200">
+                <img src="logo gmail.png" alt="Gmail" class="w-6">
+            </a>
+            <a href="https://www.instagram.com/fdrmtr04/" class="hover:opacity-75 transition duration-200">
+                <img src="logo ig.jpg" alt="Instagram" class="w-6">
+            </a>
         </div>
     </footer>
 </body>
